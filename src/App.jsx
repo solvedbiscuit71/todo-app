@@ -4,6 +4,7 @@ import ThemeImage from "./styles/components/Theme/ThemeImage";
 import ThemeToggler from "./styles/components/Theme/ThemeToggler";
 import Footer from "./styles/layouts/Footer";
 import Header from "./styles/layouts/Header";
+import React, { useState, useEffect } from 'react';
 
 function App() {
   const lightTheme = {
@@ -13,6 +14,14 @@ function App() {
     gray4: "hsl(236, 9%, 61%)",
     gray5: "hsl(235, 19%, 35%)"
   }
+
+  const [isDesktop,setDesktop] = useState(matchMedia('(min-width:769px)').matches)
+  useEffect(() => {
+    matchMedia('(min-width:769px)').addEventListener('change',event => {
+      setDesktop(event.matches)
+    })
+  },[])
+
 
   return (
     <>
@@ -46,9 +55,9 @@ function App() {
           </ThemeToggler>
         </Header>
         
-        <ThemeImage>
-          <img className="light" src="images/bg-mobile-light.jpg" alt="background image (light)" />
-          <img className="dark" src="images/bg-mobile-dark.jpg" alt="background image (dark)" />
+        <ThemeImage isDesktop={isDesktop}>
+          <img className="light" src={ `images/bg-${isDesktop ? "desktop" : "mobile"}-light.jpg`  }alt="background image (light)" />
+          <img className="dark" src={ `images/bg-${isDesktop ? "desktop" : "mobile"}-dark.jpg`  }alt="background image (dark)" />
         </ThemeImage>
 
         <TodoApp />

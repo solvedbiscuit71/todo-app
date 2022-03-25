@@ -17,6 +17,7 @@ export default styled.div({
   }
 
 },props => ({
+  aspectRatio: props.isDesktop ? "1400 / 300" : "375 / 200",
   ".light": {
     opacity: props.darkMode ? 0 : 1
   },
