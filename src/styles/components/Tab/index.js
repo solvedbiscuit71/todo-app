@@ -5,7 +5,8 @@ export default styled.ul({
   backgroundColor: "white",
   borderRadius: 5,
   boxShadow: "0px 35px 50px -15px rgba(194, 195, 214, 0.5)",
-  margin: "0 1.5em",
+  margin: "0 auto",
+  width: "min(87.2vw,540px)",
   padding: 0,
 
   listStyle: "none",

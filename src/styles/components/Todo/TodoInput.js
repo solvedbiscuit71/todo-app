@@ -7,6 +7,8 @@ export default styled.form({
   boxShadow: "0px 35px 50px -15px rgba(194, 195, 214, 0.5)",
   display: "flex",
   alignItems: "center",
+  margin: "1.5em auto 1em",
+  width: "min(87.2vw,540px)",
 
   "input": {
     minHeight: "3em",
@@ -23,6 +25,4 @@ export default styled.form({
     marginLeft: "1.5em"
   }
 
-},props => ({
-  margin: props.margin || "1.5em 1.5em 1em"
-}))
+});
