@@ -23,10 +23,12 @@ export default styled.li({
     transform: "translateY(-50%)"
   }
 },props => ({
-  borderBottomColor: props.theme.gray2,
+  borderBottomColor: props.theme.checkBorder,
+  transition: `border-bottom-color ${props.theme.duration} ${props.theme.timeFunction}`,
 
   "p": {
     textDecoration: props.checked ? "line-through" : "",
-    color: props.checked ? props.theme.gray3 : props.theme.gray5
+    color: props.checked ? props.theme.fontStroke : props.theme.fontNormal,
+    transition: `color ${props.theme.duration} ${props.theme.timeFunction}`,
   }
 }))

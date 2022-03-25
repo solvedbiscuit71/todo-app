@@ -7,5 +7,6 @@ export default styled.div(props => ({
   alignItems: 'center',
   fontSize: "0.8rem",
   padding: "0 1.875em",
-  color: props.theme.gray4
+  color: props.theme.fontLight,
+  transition: `color ${props.theme.duration} ${props.theme.timeFunction}`,
 }))

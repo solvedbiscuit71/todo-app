@@ -8,13 +8,15 @@ export default styled.div({
     position: "absolute",
     top: 0,
     left: 0,
-    transition: "opacity 250ms ease-in-out"
   }
 },props => ({
+  "svg": {
+    transition: `opacity ${props.theme.duration} ${props.theme.timeFunction}`,
+  },
   ".light": {
-    opacity: props.darkMode ? 0 : 1
+    opacity: props.theme.darkMode ? 0 : 1
   },
   ".dark": {
-    opacity: props.darkMode ? 1 : 0
+    opacity: props.theme.darkMode ? 1 : 0
   }
 }))

@@ -9,6 +9,7 @@ export default styled.div({
   backgroundRepeat: "no-repeat",
   backgroundPosition: "top 50% left 50%",
 },props => ({
-  borderColor: props.checked ? "white" : props.theme.gray2,
-  backgroundImage: props.checked ? "url('images/icon-check.svg'),linear-gradient(to bottom right,hsl(192, 100%, 67%),hsl(280, 87%, 65%))" : ""
+  borderColor: props.checked ? props.theme.cardBg : props.theme.checkBorder,
+  transition: `border-color ${props.theme.duration} ${props.theme.timeFunction}`,
+  backgroundImage: props.checked ? props.theme.checkBg : ""
 }))

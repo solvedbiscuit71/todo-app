@@ -13,15 +13,17 @@ export default styled.div({
     width: "100%",
     top: 0,
     left: 0,
-    transition: "opacity 250ms ease-in-out"
   }
 
 },props => ({
   aspectRatio: props.isDesktop ? "1400 / 300" : "375 / 200",
+  "img": {
+    transition: `opacity ${props.theme.duration} ${props.theme.timeFunction}`,
+  },
   ".light": {
-    opacity: props.darkMode ? 0 : 1
+    opacity: props.theme.darkMode ? 0 : 1
   },
   ".dark": {
-    opacity: props.darkMode ? 1 : 0
+    opacity: props.theme.darkMode ? 1 : 0
   }
 }))
