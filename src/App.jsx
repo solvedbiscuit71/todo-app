@@ -1,8 +1,30 @@
+import { Global } from "@emotion/react";
 import TodoApp from "./components/TodoApp";
 
 function App() {
   return (
     <>
+      <Global styles={`
+      @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+      *,*::before,*::after {
+        box-sizing: inherit;
+        font-family: inherit;
+      }
+
+      html,body {
+        box-sizing: border-box;
+        font-family: "Josefin Sans";
+        margin: 0;
+        padding: 0;
+      }
+      `} />
+
+      <section className="theme-image">
+        <img src="images/bg-mobile-light.jpg" alt="background image (light)" />
+        <img src="images/bg-mobile-dark.jpg" alt="background image (dark)" />
+      </section>
+
       <header>
         <h1>TODO</h1>
 
