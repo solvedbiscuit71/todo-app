@@ -1,4 +1,8 @@
+import TodoCheck from "../styles/components/Todo/TodoCheck";
+import TodoInput from "../styles/components/Todo/TodoInput";
 import TodoList from "./TodoList";
+import Tab from "../styles/components/Tab";
+import TabElement from "../styles/components/Tab/TabElement";
 
 function TodoApp() {
   const todoList = [
@@ -30,18 +34,18 @@ function TodoApp() {
 
   return (
     <>
-      <form>
-        <span></span>
-        <input type="text" placeholder="Create a new Todo..." />
-      </form>
+      <TodoInput>
+        <TodoCheck className="check"/>
+        <input type="text" placeholder="Create a new todo..." />
+      </TodoInput>
 
       <TodoList todoList={todoList} />
 
-      <section className="todos__action tab">
-        <div>All</div>
-        <div>Active</div>
-        <div>Completed</div>
-      </section>
+      <Tab>
+        <TabElement selected>All</TabElement>
+        <TabElement>Active</TabElement>
+        <TabElement>Completed</TabElement>
+      </Tab>
     </>
   );
 }

@@ -1,17 +1,19 @@
+import TodoInfo from "../../styles/components/Todo/TodoInfo";
+import TodoWrapper from "../../styles/layouts/TodoWrapper";
 import Todo from "./Todo";
 
 function TodoList(props) {
   return (
-    <section className="todos">
-      <ul className="todo-list">
+    <TodoWrapper>
+      <ul>
         { props.todoList.map(( todo,index ) => <Todo key={index} text={todo.text} complete={todo.complete} />)}
       </ul>
 
-      <div className="todos__info">
-        <div>5 Items</div>
-        <button>Clear Completed</button>
-      </div>
-    </section>
+      <TodoInfo>
+        <p>5 Items left</p>
+        <div>Clear Completed</div>
+      </TodoInfo>
+    </TodoWrapper>
   );
 }
 
