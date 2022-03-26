@@ -34,13 +34,24 @@ const darkTheme = {
 }
 
 function App() {
-  const [darkMode,setDarkMode] = useState(false)
+  const [darkMode,setDarkMode] = useState()
   const [isDesktop,setDesktop] = useState(matchMedia('(min-width:769px)').matches)
   useEffect(() => {
     matchMedia('(min-width:769px)').addEventListener('change',event => {
       setDesktop(event.matches)
     })
   },[])
+
+  useEffect(() => {
+    if (JSON.parse(localStorage.getItem("darkMode")) === null){
+      localStorage.setItem("darkMode","false")
+    }
+    setDarkMode(JSON.parse(localStorage.getItem("darkMode")))
+  },[])
+
+  useEffect(() => {
+    localStorage.setItem("darkMode",JSON.stringify(darkMode))
+  },[darkMode])
 
 
   return (
