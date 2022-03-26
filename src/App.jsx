@@ -6,34 +6,34 @@ import Footer from "./styles/layouts/Footer";
 import Header from "./styles/layouts/Header";
 import React, { useState, useEffect } from 'react';
 
-function App() {
-  const lightTheme = {
-    mainBg: "hsl(0, 0%, 98%)",
-    cardBg: "hsl(0, 0%, 100%)",
-    checkBorder: "hsl(236, 33%, 92%)",
-    checkBg: "url('images/icon-check.svg'),linear-gradient(to bottom right,hsl(192, 100%, 67%),hsl(280, 87%, 65%))",
-    fontNormal: "hsl(235, 19%, 35%)",
-    fontStroke: "hsl(233, 11%, 84%)",
-    fontLight: "hsl(236, 9%, 61%)",
-    tabActive: "hsl(220, 98%, 61%)",
-    duration: "400ms",
-    timeFunction: "linear"
-  }
-  const darkTheme = {
-    darkMode: true,
-    mainBg: "hsl(235, 21%, 11%)",
-    cardBg: "hsl(235, 24%, 19%)",
-    checkBorder: "hsl(237, 14%, 26%)",
-    checkBg: "url('images/icon-check.svg'),linear-gradient(to bottom right,hsl(192, 100%, 67%),hsl(280, 87%, 65%))",
-    fontNormal: "hsl(234, 39%, 85%)",
-    fontNormalHover: "hsl(236, 33%, 92%)",
-    fontStroke: "hsl(233, 14%, 35%)",
-    fontLight: "hsl(234, 11%, 52%)",
-    tabActive: "hsl(220, 98%, 61%)",
-    duration: "350ms",
-    timeFunction: "linear"
-  }
+const lightTheme = {
+  mainBg: "hsl(0, 0%, 98%)",
+  cardBg: "hsl(0, 0%, 100%)",
+  checkBorder: "hsl(236, 33%, 92%)",
+  checkBg: "url('images/icon-check.svg'),linear-gradient(to bottom right,hsl(192, 100%, 67%),hsl(280, 87%, 65%))",
+  fontNormal: "hsl(235, 19%, 35%)",
+  fontStroke: "hsl(233, 11%, 84%)",
+  fontLight: "hsl(236, 9%, 61%)",
+  tabActive: "hsl(220, 98%, 61%)",
+  duration: "400ms",
+  timeFunction: "linear"
+}
+const darkTheme = {
+  darkMode: true,
+  mainBg: "hsl(235, 21%, 11%)",
+  cardBg: "hsl(235, 24%, 19%)",
+  checkBorder: "hsl(237, 14%, 26%)",
+  checkBg: "url('images/icon-check.svg'),linear-gradient(to bottom right,hsl(192, 100%, 67%),hsl(280, 87%, 65%))",
+  fontNormal: "hsl(234, 39%, 85%)",
+  fontNormalHover: "hsl(236, 33%, 92%)",
+  fontStroke: "hsl(233, 14%, 35%)",
+  fontLight: "hsl(234, 11%, 52%)",
+  tabActive: "hsl(220, 98%, 61%)",
+  duration: "350ms",
+  timeFunction: "linear"
+}
 
+function App() {
   const [darkMode,setDarkMode] = useState(false)
   const [isDesktop,setDesktop] = useState(matchMedia('(min-width:769px)').matches)
   useEffect(() => {
