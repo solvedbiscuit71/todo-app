@@ -11,7 +11,7 @@ function TodoList(props) {
 
       <TodoInfo>
         <p>5 Items left</p>
-        <div>Clear Completed</div>
+        <div onClick={props.handleClear}>Clear Completed</div>
       </TodoInfo>
     </TodoWrapper>
   );

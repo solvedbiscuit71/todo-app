@@ -5,7 +5,7 @@ import Tab from "../styles/components/Tab";
 import TabElement from "../styles/components/Tab/TabElement";
 import React, { useState, useEffect } from 'react';
 
-const todoList = [
+const templateTodos = [
   {
     text: "Complete online JavaScript course",
     complete: true
@@ -33,6 +33,7 @@ const todoList = [
 ]
 
 function TodoApp() {
+  const [todoList,setTodos] = useState([])
   const [tabs,setTabs] = useState([
     {
       name: "All",
@@ -47,6 +48,17 @@ function TodoApp() {
       selected: false
     }
   ])
+
+  useEffect(() => {
+    if (!localStorage.getItem("todoList")){
+      localStorage.setItem("todoList",JSON.stringify(templateTodos))
+    }
+    setTodos(JSON.parse(localStorage.getItem("todoList")))
+  },[])
+
+  useEffect(() => {
+    localStorage.setItem("todoList",JSON.stringify(todoList))
+  },[todoList])
 
   const switchTab = (name) => {
     const newTabs = JSON.parse(JSON.stringify(tabs))
@@ -67,7 +79,6 @@ function TodoApp() {
        }
        return value
      },"")
-     console.log(filter)
 
      switch (filter) {
         case "All":
@@ -79,6 +90,10 @@ function TodoApp() {
      }
    }
 
+   const handleClear = () => {
+      setTodos(todoList.filter(todo => !todo.complete && todo))
+   }
+
   return (
     <>
       <TodoInput>
@@ -86,7 +101,7 @@ function TodoApp() {
         <input type="text" placeholder="Create a new todo..." />
       </TodoInput>
 
-      <TodoList todoList={filterTodos()} />
+      <TodoList todoList={filterTodos()} handleClear={handleClear} />
 
       <Tab>
         { tabs.map(( tab,index ) => <TabElement onClick={() => switchTab(tab.name)} key={index} selected={tab.selected}>{tab.name}</TabElement>)}
