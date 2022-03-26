@@ -107,9 +107,23 @@ function TodoApp() {
      }))
    }
 
+   const handleSubmit = (event) => {
+      event.preventDefault()
+
+      const inputElement = event.target.getElementsByTagName("input")[0]
+      setTodos([
+        {
+          text: inputElement.value,
+          complete: false
+        },
+        ...todoList
+      ])
+      inputElement.value = ""
+   }
+
   return (
     <>
-      <TodoInput>
+      <TodoInput onSubmit={handleSubmit}>
         <TodoCheck className="check"/>
         <input type="text" placeholder="Create a new todo..." />
       </TodoInput>

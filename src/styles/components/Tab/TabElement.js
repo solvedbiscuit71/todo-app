@@ -6,6 +6,7 @@ export default styled.li(props => ({
 
   "&:hover": {
     cursor: 'pointer',
-    color: props.theme.fontNormal
+    color: props.theme.fontNormal,
+    transitionDuration: "200ms"
   }
 }))
