@@ -19,7 +19,7 @@ export default styled.form(props => ({
     transitionDuration: props.theme.duration,
     transitionTimingFunction: props.theme.timeFunction,
     minHeight: "3em",
-    width: "calc(100% - 4.5em)",
+    width: "75%",
     border: "none",
     marginLeft: "calc(2.5em - 22px)",
 
@@ -35,7 +35,9 @@ export default styled.form(props => ({
   "@media (min-width:769px)": {
     minHeight: 64,
     "input": {
-      fontSize: "1rem"
+      fontSize: "1rem",
+      marginLeft: "1em",
+      width: "85%"
     }
   }
 }));

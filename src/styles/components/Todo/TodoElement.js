@@ -4,25 +4,25 @@ export default styled.li({
   minHeight: 52,
   display: "flex",
   gap: "1em",
-  alignItems: "center",
+  alignItems: "flex-start",
   fontSize: ".8rem",
+
   borderBottomWidth: 1,
   borderBottomStyle: "solid",
-  padding: "0 1.875em",
+  padding: "1.2em 1.875em",
   "p": {
-    margin: 0,
+    margin: "5px 0 0",
     width: "75%",
-    overflowX: "auto",
-    whiteSpace: "nowrap"
+    whiteSpace: "pre-wrap",
   },
   position: "relative",
   ".cross": {
     opacity: 0,
     transition: "opacity 250ms ease-in-out",
     position: "absolute",
-    top: "50%",
+    top: "calc(1.2em + 3px)",
     right: "1.875em",
-    transform: "scale(.8) translateY(-50%)"
+    transform: "scale(.8)"
   },
 
   "&:hover": {
@@ -34,11 +34,18 @@ export default styled.li({
 
   "@media (min-width:769px)": {
     minHeight: 64,
+    padding: "1.35em 1.875em",
+    gap: "1.5em",
+    ".check": {
+      marginTop: 2
+    },
     "p": {
+      width: "85%",
       fontSize: "1rem"
     },
     ".cross": {
-      transform: "scale(1) translateY(-50%)"
+      transform: "scale(1)",
+      top: "calc(1.35em + 6px)"
     }
 
   }
