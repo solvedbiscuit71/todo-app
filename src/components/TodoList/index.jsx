@@ -6,7 +6,7 @@ function TodoList(props) {
   return (
     <TodoWrapper>
       <ul>
-        { props.todoList.map(( todo,index ) => <Todo key={index} text={todo.text} complete={todo.complete} />)}
+        { props.todoList.map(( todo,index ) => <Todo handleDelete={props.handleDelete} key={index} text={todo.text} complete={todo.complete} />)}
       </ul>
 
       <TodoInfo>

@@ -93,6 +93,10 @@ function TodoApp() {
    const handleClear = () => {
       setTodos(todoList.filter(todo => !todo.complete && todo))
    }
+   
+   const handleDelete = (text) => {
+     setTodos(todoList.filter(todo => todo.text !== text && todo))
+   }
 
   return (
     <>
@@ -101,7 +105,7 @@ function TodoApp() {
         <input type="text" placeholder="Create a new todo..." />
       </TodoInput>
 
-      <TodoList todoList={filterTodos()} handleClear={handleClear} />
+      <TodoList todoList={filterTodos()} handleClear={handleClear} handleDelete={handleDelete } />
 
       <Tab>
         { tabs.map(( tab,index ) => <TabElement onClick={() => switchTab(tab.name)} key={index} selected={tab.selected}>{tab.name}</TabElement>)}
