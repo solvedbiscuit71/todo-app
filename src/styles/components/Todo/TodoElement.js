@@ -30,6 +30,13 @@ export default styled.li({
     ".cross": {
       opacity: 1
     }
+  },
+
+  "@media (min-width:769px)": {
+    minHeight: 64,
+    "p": {
+      fontSize: "1rem"
+    }
   }
 },props => ({
   borderBottomColor: props.theme.checkBorder,

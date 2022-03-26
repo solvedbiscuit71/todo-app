@@ -14,5 +14,13 @@ export default styled.ul(props => ({
   display: 'flex',
   gap: 20,
   justifyContent: 'center',
-  alignItems: 'center'
+  alignItems: 'center',
+  
+  "@media (min-width: 769px)": {
+    backgroundColor: "transparent",
+    position: "relative",
+    top: "-4.6em",
+    width: "fit-content",
+    fontSize: ".9rem",
+  }
 }));

@@ -30,5 +30,12 @@ export default styled.form(props => ({
   },
   ".check": {
     marginLeft: "1.5em"
+  },
+
+  "@media (min-width:769px)": {
+    minHeight: 64,
+    "input": {
+      fontSize: "1rem"
+    }
   }
 }));
