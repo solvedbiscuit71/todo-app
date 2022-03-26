@@ -6,11 +6,11 @@ function TodoList(props) {
   return (
     <TodoWrapper>
       <ul>
-        { props.todoList.map(( todo,index ) => <Todo handleDelete={props.handleDelete} key={index} text={todo.text} complete={todo.complete} />)}
+        { props.todoList.map(( todo,index ) => <Todo handleDelete={props.handleDelete} handleCheck={props.handleCheck} key={index} text={todo.text} complete={todo.complete} />)}
       </ul>
 
       <TodoInfo>
-        <p>5 Items left</p>
+        <p>{props.noOfActive} Items left</p>
         <div onClick={props.handleClear}>Clear Completed</div>
       </TodoInfo>
     </TodoWrapper>
