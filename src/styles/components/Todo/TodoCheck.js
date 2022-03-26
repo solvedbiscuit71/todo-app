@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 
 export default styled.div({
-  width: 22,
-  height: 22,
+  width: 24,
+  height: 24,
   borderWidth: 1.5,
   borderStyle: "solid",
   borderRadius: "50%",

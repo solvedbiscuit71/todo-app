@@ -13,4 +13,10 @@ export default styled.header({
     letterSpacing: ".25em",
     margin: 0
   },
+
+  "@media (min-width: 769px)": {
+    "h1": {
+      fontSize: "2.75rem"
+    }
+  }
 });

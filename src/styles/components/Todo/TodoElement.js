@@ -6,7 +6,7 @@ export default styled.li({
   gap: "1em",
   alignItems: "center",
   fontSize: ".8rem",
-  borderBottomWidth: 1.5,
+  borderBottomWidth: 1,
   borderBottomStyle: "solid",
   padding: "0 1.875em",
   "p": {
@@ -36,7 +36,11 @@ export default styled.li({
     minHeight: 64,
     "p": {
       fontSize: "1rem"
+    },
+    ".cross": {
+      transform: "scale(1) translateY(-50%)"
     }
+
   }
 },props => ({
   borderBottomColor: props.theme.checkBorder,
