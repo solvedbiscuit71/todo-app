@@ -72,8 +72,9 @@ function App() {
       }
 
       html {
-        transition: background-color ${darkMode ? darkTheme.duration : lightTheme.duration} ${darkMode ? darkTheme.timeFunction : lightTheme.timeFunction};
+        min-height: 100vh;
         background-color: ${darkMode ? darkTheme.mainBg : lightTheme.mainBg};
+        transition: background-color ${darkMode ? darkTheme.duration : lightTheme.duration} ${darkMode ? darkTheme.timeFunction : lightTheme.timeFunction};
       }
       `} />
 
