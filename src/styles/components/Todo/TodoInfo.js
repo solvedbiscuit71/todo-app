@@ -9,4 +9,10 @@ export default styled.div(props => ({
   padding: "0 1.875em",
   color: props.theme.fontLight,
   transition: `color ${props.theme.duration} ${props.theme.timeFunction}`,
+
+  "div:hover": {
+    cursor: 'pointer',
+    color: props.theme.fontNormal,
+    transition: "color 250ms linear"
+  }
 }))

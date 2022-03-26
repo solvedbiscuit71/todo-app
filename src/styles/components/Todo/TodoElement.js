@@ -17,10 +17,19 @@ export default styled.li({
   },
   position: "relative",
   ".cross": {
+    opacity: 0,
+    transition: "opacity 250ms ease-in-out",
     position: "absolute",
     top: "50%",
     right: "1.875em",
-    transform: "translateY(-50%)"
+    transform: "scale(.8) translateY(-50%)"
+  },
+
+  "&:hover": {
+    cursor: "pointer",
+    ".cross": {
+      opacity: 1
+    }
   }
 },props => ({
   borderBottomColor: props.theme.checkBorder,

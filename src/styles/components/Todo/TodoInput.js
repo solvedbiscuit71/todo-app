@@ -13,6 +13,7 @@ export default styled.form(props => ({
 
   "input": {
     color: props.theme.fontNormal,
+    caretColor: props.theme.tabActive,
     backgroundColor: props.theme.cardBg,
     transitionProperty: "background-color,color",
     transitionDuration: props.theme.duration,

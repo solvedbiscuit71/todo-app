@@ -11,5 +11,5 @@ export default styled.div({
 },props => ({
   borderColor: props.checked ? props.theme.cardBg : props.theme.checkBorder,
   transition: `border-color ${props.theme.duration} ${props.theme.timeFunction}`,
-  backgroundImage: props.checked ? props.theme.checkBg : ""
+  backgroundImage: props.checked ? props.theme.checkBg : "",
 }))
