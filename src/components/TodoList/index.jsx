@@ -11,8 +11,8 @@ function TodoList(props) {
       <ul onDragOver={props.handleDrag}>
         { props.todoList.map(( todo,index ) => (
           <Todo 
-            handleDelete={props.handleDelete} 
-            handleCheck={props.handleCheck} 
+            handleDelete={() => props.handleDelete(index)} 
+            handleCheck={() => props.handleCheck(index)} 
             drag={drag}
             setDrag={setDrag}
             key={index} 

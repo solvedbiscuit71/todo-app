@@ -104,13 +104,13 @@ function TodoApp() {
     setTodos(todoList.filter(todo => !todo.complete && todo))
   }
   
-  const handleDelete = (text) => {
-    setTodos(todoList.filter(todo => todo.text !== text && todo))
+  const handleDelete = (index) => {
+    setTodos(todoList.filter(( todo,i ) => i !== index && todo))
   }
 
-  const handleCheck = (text) => {
-    setTodos(todoList.map(todo => {
-      if (todo.text === text) {
+  const handleCheck = (index) => {
+    setTodos(todoList.map(( todo,i ) => {
+      if (i === index) {
         todo.complete = todo.complete ? false : true
       }
       return todo
