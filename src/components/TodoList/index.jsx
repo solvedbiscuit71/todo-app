@@ -8,7 +8,7 @@ function TodoList(props) {
 
   return (
     <TodoWrapper>
-      <ul>
+      <ul onDragOver={props.handleDrag}>
         { props.todoList.map(( todo,index ) => (
           <Todo 
             handleDelete={props.handleDelete} 

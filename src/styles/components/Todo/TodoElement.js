@@ -10,6 +10,9 @@ export default styled.li({
   borderBottomWidth: 1,
   borderBottomStyle: "solid",
   padding: "1.2em 1.875em",
+  "&.dragging": {
+    opacity: .5
+  },
   "&:first-of-type": {
     borderTopLeftRadius: 5,
     borderTopRightRadius: 5

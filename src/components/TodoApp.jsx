@@ -32,6 +32,16 @@ const template = [
   }
 ]
 
+const findAfterIndex = (list,after) => {
+  let i = 0
+  list.forEach(( item,index ) => {
+    if (item.text === after){
+      i = index
+    }
+  })
+  return i
+}
+
 function TodoApp() {
   const [todoList,setTodos] = useState([])
   const [tabs,setTabs] = useState([
@@ -121,6 +131,44 @@ function TodoApp() {
     inputElement.value = ""
   }
 
+  const dragOver = (event) => {
+    const draggingElement = document.getElementsByClassName("dragging")[0]
+    const afterElement = findNearestElement(event.clientY)
+
+    const newList = todoList.filter(item => item.text !== draggingElement.childNodes[1].innerText)
+    const newObj = {
+      text: draggingElement.childNodes[1].innerText,
+      complete: draggingElement.checked
+    }
+    if (afterElement === undefined) {
+      newList.push(newObj)
+    }else {
+      newList.splice(findAfterIndex(newList,afterElement.childNodes[1].innerText),0,newObj)
+    }
+    setTodos(newList)
+  }
+
+  const findNearestElement = (clientY) => {
+    const nonedraggingElement = [...document.getElementsByClassName("not-dragging")]
+    const nearestElement = nonedraggingElement.reduce((nearest,current) => {
+      const rect = current.getBoundingClientRect()
+      const offset = rect.y + ( rect.height / 2 ) - clientY
+      
+      if (offset > 0 && offset < nearest.offset) {
+        return {
+          offset: offset,
+          element: current
+        }
+      }
+      return nearest
+    },{
+      offset: Number.POSITIVE_INFINITY,
+      element: undefined
+    })
+
+    return nearestElement.element
+  }
+
   return (
     <>
       <TodoInput onSubmit={handleSubmit}>
@@ -133,6 +181,7 @@ function TodoApp() {
         handleClear={handleClear} 
         handleDelete={handleDelete} 
         handleCheck={handleCheck}
+        handleDrag={dragOver}
         noOfActive={todoList.reduce((count,todo) => {
           if (!todo.complete) {
             count++
