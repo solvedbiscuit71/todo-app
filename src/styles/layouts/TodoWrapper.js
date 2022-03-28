@@ -4,8 +4,8 @@ export default styled.div(props => ({
   margin: "1em auto",
   width: "min(87.2vw,540px)",
   backgroundColor: props.theme.cardBg,
-  borderRadius: 5,
-  boxShadow: props.theme.darkMode ? "" : "0px 35px 50px -15px rgba(194, 195, 214, 0.5)",
+  borderRadius: ".3125em",
+  boxShadow: props.theme.darkMode ? "" : "0px 2em 3.125em -1em rgba(194, 195, 214, 0.5)",
   transition: `background-color ${props.theme.duration} ${props.theme.timeFunction}`,
 
   "ul": {

@@ -1,29 +1,21 @@
 import styled from "@emotion/styled";
 
-export default styled.div({
-  position: "absolute",
-  zIndex: -1,
-  top: 0,
-  left: 0,
-  width: "100%",
-  aspectRatio: "375 / 200",
-
-  "img": {
-    position: "absolute",
-    width: "100%",
-    top: 0,
-    left: 0,
-  }
-
-},props => ({
+export default styled.div(props => ({
   aspectRatio: props.isDesktop ? "1400 / 300" : "375 / 200",
+  left: 0,
+  position: "absolute",
+  top: 0,
+  width: "100%",
+  zIndex: -1,
+
   "img": {
+    left: 0,
+    position: "absolute",
+    top: 0,
     transition: `opacity ${props.theme.duration} ${props.theme.timeFunction}`,
+    width: "100%",
   },
-  ".light": {
-    opacity: props.theme.darkMode ? 0 : 1
-  },
-  ".dark": {
-    opacity: props.theme.darkMode ? 1 : 0
-  }
+
+  ".dark": { opacity: props.theme.darkMode ? 1 : 0 },
+  ".light": { opacity: props.theme.darkMode ? 0 : 1 }
 }))

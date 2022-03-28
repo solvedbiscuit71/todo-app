@@ -1,39 +1,40 @@
 import styled from "@emotion/styled";
 
 export default styled.form(props => ({
-  minHeight: 48,
+  alignItems: "center",
   backgroundColor: props.theme.cardBg,
-  borderRadius: 5,
+  borderRadius: ".3125em",
   boxShadow: props.theme.darkMode ? "" : "0px 35px 50px -15px rgba(194, 195, 214, 0.5)",
   display: "flex",
-  alignItems: "center",
   margin: "1.5em auto 1em",
-  width: "min(87.2vw,540px)",
+  minHeight: "3em",
   transition: `background-color ${props.theme.duration} ${props.theme.timeFunction}`,
+  width: "min(87.2vw,540px)",
 
   "input": {
-    color: props.theme.fontNormal,
-    caretColor: props.theme.tabActive,
     backgroundColor: props.theme.cardBg,
-    transitionProperty: "background-color,color",
-    transitionDuration: props.theme.duration,
-    transitionTimingFunction: props.theme.timeFunction,
-    minHeight: "3em",
-    width: "75%",
     border: "none",
+    caretColor: props.theme.tabActive,
+    color: props.theme.fontNormal,
     marginLeft: "calc(2.5em - 22px)",
+    minHeight: "3em",
+    transitionDuration: props.theme.duration,
+    transitionProperty: "background-color,color",
+    transitionTimingFunction: props.theme.timeFunction,
+    width: "75%",
 
     "&:hover,&:focus": {
       border: "none",
       outline: "none"
     }
   },
+
   ".check": {
     marginLeft: "1.5em"
   },
 
   "@media (min-width:769px)": {
-    minHeight: 64,
+    minHeight: "4em",
     "input": {
       fontSize: "1rem",
       marginLeft: "1em",

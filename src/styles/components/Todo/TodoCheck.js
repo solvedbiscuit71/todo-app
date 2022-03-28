@@ -1,30 +1,32 @@
 import styled from "@emotion/styled";
 
 export default styled.div(props => ({
-  width: 22,
-  height: 22,
-  borderRadius: "50%",
-  backgroundRepeat: "no-repeat",
   backgroundColor: props.checked ? "" : props.theme.checkBorder,
+  backgroundRepeat: "no-repeat",
+  borderRadius: "50%",
+  height: 22,
   position: "relative",
   transition: `background-color ${props.theme.duration} ${props.theme.timeFunction}`,
+  width: 22,
+
+  "&:hover": {
+    backgroundImage: "linear-gradient(to bottom right,hsl(192, 100%, 67%),hsl(280, 87%, 65%))",
+    cursor: "pointer",
+  },
+
   "&::after": {
+    backgroundColor: props.theme.cardBg,
+    backgroundImage: props.checked ? props.theme.checkBg : "",
+    backgroundPosition: "top 50% left 50%",
+    backgroundRepeat: "no-repeat",
+    borderRadius: "50%",
     content: '""',
-    width: props.checked ? 22 : 19,
     height: props.checked ? 22 : 19,
+    left: props.checked ? 0 : 1.5,
     position: "absolute",
     top: props.checked ? 0 : 1.5,
-    left: props.checked ? 0 : 1.5,
-    borderRadius: "50%",
-    backgroundColor: props.theme.cardBg,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "top 50% left 50%",
-    backgroundImage: props.checked ? props.theme.checkBg : "",
     transition: `background-color ${props.theme.duration} ${props.theme.timeFunction}`,
-  },
-  "&:hover": {
-    cursor: "pointer",
-    backgroundImage: "linear-gradient(to bottom right,hsl(192, 100%, 67%),hsl(280, 87%, 65%))",
+    width: props.checked ? 22 : 19,
   },
 
   "@media (min-width:769px)": {

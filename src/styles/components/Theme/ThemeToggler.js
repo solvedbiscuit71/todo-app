@@ -1,22 +1,17 @@
 import styled from "@emotion/styled";
 
-export default styled.div({
-  width: 26,
-  height: 26,
+export default styled.div(props => ({
+  height: "1.625em",
   position: "relative",
+  width: "1.625em",
+
   "svg": {
+    left: 0,
     position: "absolute",
     top: 0,
-    left: 0,
-  }
-},props => ({
-  "svg": {
     transition: `opacity ${props.theme.duration} ${props.theme.timeFunction}`,
   },
-  ".light": {
-    opacity: props.theme.darkMode ? 0 : 1
-  },
-  ".dark": {
-    opacity: props.theme.darkMode ? 1 : 0
-  }
+
+  ".dark": { opacity: props.theme.darkMode ? 1 : 0 },
+  ".light": { opacity: props.theme.darkMode ? 0 : 1 }
 }))

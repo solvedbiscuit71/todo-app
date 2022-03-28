@@ -5,8 +5,8 @@ export default styled.li(props => ({
   transition: `color ${props.theme.duration} ${props.theme.timeFunction}`,
 
   "&:hover": {
-    cursor: 'pointer',
     color: props.theme.fontNormal,
+    cursor: 'pointer',
     transitionDuration: "200ms"
   }
 }))
