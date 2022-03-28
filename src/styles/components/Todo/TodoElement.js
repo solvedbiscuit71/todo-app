@@ -11,7 +11,8 @@ export default styled.li({
   borderBottomStyle: "solid",
   padding: "1.2em 1.875em",
   "&.dragging": {
-    opacity: .5
+    opacity: .5,
+    cursor: "move !important"
   },
   "&:first-of-type": {
     borderTopLeftRadius: 5,
@@ -59,7 +60,9 @@ export default styled.li({
 },props => ({
   backgroundColor: props.theme.cardBg,
   borderBottomColor: props.theme.checkBorder,
-  transition: `border-bottom-color ${props.theme.duration} ${props.theme.timeFunction}`,
+  transitionProperty: "background-color, border-bottom-color",
+  transitionDuration: props.theme.duration,
+  transitionTimingFunction: props.theme.timeFunction,
 
   "p": {
     textDecoration: props.checked ? "line-through" : "",

@@ -7,6 +7,7 @@ export default styled.div(props => ({
   backgroundRepeat: "no-repeat",
   backgroundColor: props.checked ? "" : props.theme.checkBorder,
   position: "relative",
+  transition: `background-color ${props.theme.duration} ${props.theme.timeFunction}`,
   "&::after": {
     content: '""',
     width: props.checked ? 22 : 19,
@@ -19,6 +20,7 @@ export default styled.div(props => ({
     backgroundRepeat: "no-repeat",
     backgroundPosition: "top 50% left 50%",
     backgroundImage: props.checked ? props.theme.checkBg : "",
+    transition: `background-color ${props.theme.duration} ${props.theme.timeFunction}`,
   },
   "&:hover": {
     cursor: "pointer",
