@@ -121,9 +121,13 @@ function TodoApp() {
     event.preventDefault()
 
     const inputElement = event.target.getElementsByTagName("input")[0]
+    if (inputElement.value.trim() === "") {
+      return
+    }
+
     setTodos([
       {
-        text: inputElement.value,
+        text: inputElement.value.trim(),
         complete: false
       },
       ...todoList
