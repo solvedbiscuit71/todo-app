@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export default styled.section(props => ({
+export default styled.div(props => ({
   margin: "1em auto",
   width: "min(87.2vw,540px)",
   backgroundColor: props.theme.cardBg,

@@ -75,8 +75,8 @@ The designs were created to the following widths:
 
 # Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/todo-app-with-reactjs-and-emotion-HkYavjRM9](https://www.frontendmentor.io/solutions/todo-app-with-reactjs-and-emotion-HkYavjRM9)
+- Live Site URL: [https://todo-app-rho-ten.vercel.app/](https://todo-app-rho-ten.vercel.app/)
 
 # Author
 
