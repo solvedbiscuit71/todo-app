@@ -5,7 +5,7 @@ import Tab from "../styles/components/Tab";
 import TabElement from "../styles/components/Tab/TabElement";
 import React, { useState, useEffect } from 'react';
 
-const templateTodos = [
+const template = [
   {
     text: "Complete online JavaScript course",
     complete: true
@@ -29,7 +29,7 @@ const templateTodos = [
   {
     text: "Complete Todo App on Frontend Mentor",
     complete: false
-  },
+  }
 ]
 
 function TodoApp() {
@@ -51,7 +51,7 @@ function TodoApp() {
 
   useEffect(() => {
     if (!localStorage.getItem("todoList")){
-      localStorage.setItem("todoList",JSON.stringify(templateTodos))
+      localStorage.setItem("todoList",JSON.stringify(template))
     }
     setTodos(JSON.parse(localStorage.getItem("todoList")))
   },[])
@@ -72,54 +72,54 @@ function TodoApp() {
     setTabs(newTabs)
   }
 
-   const filterTodos = () => {
-     const filter = tabs.reduce((value, tab) => {
-       if (tab.selected){
-         return tab.name
-       }
-       return value
-     },"")
+  const filterTodos = () => {
+    const filter = tabs.reduce((value, tab) => {
+      if (tab.selected){
+        return tab.name
+      }
+      return value
+    },"")
 
-     switch (filter) {
-        case "All":
-          return todoList
-        case "Active":
-          return todoList.filter(todo => !todo.complete && todo)
-        case "Completed":
-          return todoList.filter(todo => todo.complete && todo)
-     }
-   }
+    switch (filter) {
+      case "All":
+        return todoList
+      case "Active":
+        return todoList.filter(todo => !todo.complete && todo)
+      case "Completed":
+        return todoList.filter(todo => todo.complete && todo)
+    }
+  }
 
-   const handleClear = () => {
-      setTodos(todoList.filter(todo => !todo.complete && todo))
-   }
-   
-   const handleDelete = (text) => {
-     setTodos(todoList.filter(todo => todo.text !== text && todo))
-   }
+  const handleClear = () => {
+    setTodos(todoList.filter(todo => !todo.complete && todo))
+  }
+  
+  const handleDelete = (text) => {
+    setTodos(todoList.filter(todo => todo.text !== text && todo))
+  }
 
-   const handleCheck = (text) => {
-     setTodos(todoList.map(todo => {
-       if (todo.text === text) {
-         todo.complete = todo.complete ? false : true
-       }
-       return todo
-     }))
-   }
+  const handleCheck = (text) => {
+    setTodos(todoList.map(todo => {
+      if (todo.text === text) {
+        todo.complete = todo.complete ? false : true
+      }
+      return todo
+    }))
+  }
 
-   const handleSubmit = (event) => {
-      event.preventDefault()
+  const handleSubmit = (event) => {
+    event.preventDefault()
 
-      const inputElement = event.target.getElementsByTagName("input")[0]
-      setTodos([
-        {
-          text: inputElement.value,
-          complete: false
-        },
-        ...todoList
-      ])
-      inputElement.value = ""
-   }
+    const inputElement = event.target.getElementsByTagName("input")[0]
+    setTodos([
+      {
+        text: inputElement.value,
+        complete: false
+      },
+      ...todoList
+    ])
+    inputElement.value = ""
+  }
 
   return (
     <>

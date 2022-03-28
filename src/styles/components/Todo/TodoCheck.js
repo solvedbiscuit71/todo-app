@@ -5,15 +5,15 @@ export default styled.div(props => ({
   height: 22,
   borderRadius: "50%",
   backgroundRepeat: "no-repeat",
-  backgroundColor: props.theme.checkBorder,
+  backgroundColor: props.checked ? "" : props.theme.checkBorder,
   position: "relative",
   "&::after": {
     content: '""',
-    width: 19,
-    height: 19,
+    width: props.checked ? 22 : 19,
+    height: props.checked ? 22 : 19,
     position: "absolute",
-    top: 1.5,
-    left: 1.5,
+    top: props.checked ? 0 : 1.5,
+    left: props.checked ? 0 : 1.5,
     borderRadius: "50%",
     backgroundColor: props.theme.cardBg,
     backgroundRepeat: "no-repeat",
@@ -29,8 +29,8 @@ export default styled.div(props => ({
     width: 24,
     height: 24,
     "&::after": {
-      width: 21,
-      height: 21
+      width: props.checked ? 24 : 21,
+      height: props.checked ? 24 : 21,
     }
   }
 }))

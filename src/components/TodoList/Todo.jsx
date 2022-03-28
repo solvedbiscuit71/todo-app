@@ -3,7 +3,7 @@ import TodoElement from "../../styles/components/Todo/TodoElement";
 
 function Todo(props) {
   return (
-    <TodoElement checked={props.complete}>
+    <TodoElement draggable="true" checked={props.complete}>
       <TodoCheck onClick={() => props.handleCheck(props.text)} checked={props.complete} className="check"/>
       <p>{props.text}</p>
 
